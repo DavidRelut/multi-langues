@@ -11,7 +11,7 @@ if(supportedLangs.indexOf(browserLang) === -1){
 }
 
 const ContextProvider = props => {
-  const [lang, setLang] = useState('EN');
+  const [lang, setLang] = useState(browserLang);
 
   const toggleLangs = changeLang => {
     setLang(changeLang)
