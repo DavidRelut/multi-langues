@@ -3,13 +3,17 @@ import FrenchFlag from '../../assets/france.svg';
 import EnglishFlag from '../../assets/united-kingdom.svg';
 import SpanishFlag from '../../assets/spain.svg';
 import './ToggleLangs.css';
+import { Context } from '../../context/langContext';
 
 function ToggleLangs() {
+
+  const {ToggleLangs} = useContext(Context)
+
   return (
     <div className='container-langs'>
-      <img src={FrenchFlag} alt="French Flag" />
-      <img src={EnglishFlag} alt="English Flag" />
-      <img src={SpanishFlag} alt="Spanish Flag" />
+      <img onClick={() => ToggleLangs('FR')} src={FrenchFlag} alt="French Flag" />
+      <img onClick={() => ToggleLangs('EN')} src={EnglishFlag} alt="English Flag" />
+      <img onClick={() => ToggleLangs('ES')} src={SpanishFlag} alt="Spanish Flag" />
     </div>
   )
 }
